@@ -1,0 +1,30 @@
+classDiagram
+	MenuItem o-- IMenu
+	IMenu <|-- Menu
+	IMenu <|-- DiscountMenu
+	IMenu <|-- ChristmasMenuDecorator
+	IMenu o-- ChristmasMenuDecorator
+
+	%% The ChristmasMenuDecorator is a decorator for IMenu
+	%% It can add additional functionality to the menu without modifying the original Menu class
+
+	%% The ChristmasMenuWithDiscount is a specific implementation of the IMenu that applies a discount
+class MenuItem{
+    + string name
+    + double price
+  }
+
+  class IMenu{
+    + List~MenuItem~ MenuItems
+  }
+
+  class Menu{
+  }
+
+  class DiscountMenu{
+    + double discountRate
+  }
+
+  class ChristmasMenuDecorator{
+		+ IMenu menu
+  }
