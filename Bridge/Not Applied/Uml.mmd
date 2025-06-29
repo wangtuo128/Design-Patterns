@@ -1,0 +1,45 @@
+classDiagram
+    IBook <|-- PrintBook
+    IBook <|-- AudioBook
+    IBook <|-- DigitalBook
+    PrintBook <|-- PrintBookWithSavingToDatabase
+
+    PrintBook <|-- MathPrintBook
+    PrintBook <|-- ChemistryPrintBook
+    AudioBook <|-- MathAudioBook
+    AudioBook <|-- ChemistryAudioBook
+    DigitalBook <|-- MathDigitalBook
+    DigitalBook <|-- ChemistryDigitalBook
+    PrintBookWithSavingToDatabase <|-- MathPrintBookWithSavingToDatabase
+    PrintBookWithSavingToDatabase <|-- ChemistryPrintBookWithSavingToDatabase
+
+    class IBook {
+        +void GetContent()
+        +void Publish()
+    }
+
+    class PrintBook 
+
+    class AudioBook
+
+    class DigitalBook
+
+    class PrintBookWithSavingToDatabase{
+        +void Save()
+    }
+
+    class MathPrintBook
+
+    class ChemistryPrintBook
+
+    class MathAudioBook
+
+    class ChemistryAudioBook
+
+    class MathDigitalBook
+
+    class ChemistryDigitalBook
+
+    class MathPrintBookWithSavingToDatabase
+
+    class ChemistryPrintBookWithSavingToDatabase

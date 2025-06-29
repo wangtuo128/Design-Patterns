@@ -1,0 +1,29 @@
+classDiagram
+    IBook <|-- PrintBook
+    IBook <|-- AudioBook
+    IBook <|-- DigitalBook
+    IBookContentProvider <|-- MathBookContentProvider
+    IBookContentProvider <|-- ChemistryBookContentProvider
+    IBookSaver <|-- DatabaseBookSaver
+    IBookContentProvider o-- IBook
+    IBookContentProvider o-- IBookSaver
+
+    class IBook{
+        +IBookContentProvider BookContentProvider
+        +void Publish()
+    }
+
+    class IBookContentProvider{
+        +string GetContent()
+    }
+
+    class IBookSaver{
+        +void Save()
+    }
+
+    class PrintBook
+    class AudioBook
+    class DigitalBook
+    class MathBookContentProvider
+    class ChemistryBookContentProvider
+    class DatabaseBookSaver
