@@ -5,8 +5,8 @@ classDiagram
     IBookContentProvider <|-- MathBookContentProvider
     IBookContentProvider <|-- ChemistryBookContentProvider
     IBookSaver <|-- DatabaseBookSaver
-    IBookContentProvider o-- IBook
-    IBookContentProvider o-- IBookSaver
+    IBookContentProvider --o IBook
+    IBookContentProvider --o IBookSaver
 
     class IBook{
         +IBookContentProvider BookContentProvider
